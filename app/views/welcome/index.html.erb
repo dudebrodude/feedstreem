@@ -1,3 +1,3 @@
 <h1>Welcome, <%= current_user.email %></h1>
-<p><%= current_user.all_following %></p>
+<p><%= current_user.follows_by_type('Club') %></p>
 
