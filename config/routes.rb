@@ -1,11 +1,15 @@
 Feedstreem::Application.routes.draw do
+  resources :checkins
+
   devise_for :users
   get "welcome/index"
   resources :events
 
   resources :clubs
 
-  resources :users
+  resources :users do
+ resources :follows, :only => [:create, :destroy] 
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

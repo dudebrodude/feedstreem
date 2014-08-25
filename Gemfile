@@ -30,6 +30,7 @@ gem 'acts_as_follower'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'merit'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
