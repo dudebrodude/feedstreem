@@ -10,11 +10,11 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
- <% if user_signed_in? %>
-   <div id="follow_user">
-     <%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
-   </div>
-   <% end %>
+<% if user_signed_in? %>
+<div id="follow_user">
+<%= render :partial => "shared/follow_user", :locals => {:user => @user} %>
+</div>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -5,10 +5,12 @@ Feedstreem::Application.routes.draw do
   get "welcome/index"
   resources :events
 
-  resources :clubs
+resources :clubs do
+  resources :follows, :controller => 'follows_clubs', :only => [:create, :destroy]
+end
 
   resources :users do
- resources :follows, :only => [:create, :destroy] 
+ resources :follows, :only => [:create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,7 +1,7 @@
 <% unless user == current_user %>
 <% if current_user.following?(user) %>
-<%= render 'unfollow' %>
+<%= button_to("Un-Follow #{user.email}", user_follow_path(user.to_param, current_user.get_follow(user).id), :method => :delete, :remote => true) %>
 <% else %>
-<%= render 'follow' %>
+<%= button_to("Follow #{user.email}", user_follows_path(user.to_param), :remote => true) %>
 <% end %>
 <% end %>
