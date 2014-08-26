@@ -9,7 +9,7 @@
 </p>
  <% if user_signed_in? %>
 <div id="follows_user">
-<%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
+<%= render :partial => "follows_users/follow_user", :locals => {:user => @user} %>
 </div>
 <% end %> 
 	<% @followers.each do |follower| %>

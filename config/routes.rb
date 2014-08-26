@@ -10,7 +10,7 @@ resources :clubs do
 end
 
  resources :users do
-resources :follows, :only => [:create, :destroy]
+resources :follows, :controller => 'follows_users', :only => [:create, :destroy]
 
 end
 
