@@ -1,8 +1,9 @@
 <% if user_signed_in? %>
 <h1>Welcome, <%= current_user.email %></h1>
 <%= current_user.points %>
-<p><%= current_user.all_following %></p>
-
+<% @following.each do |following| %>
+<%= following.name %>
+<% end %>
 <% else %>
 Welcome! Please <%= link_to 'Sign in', new_user_session_path %> to continue
 <% end %>
