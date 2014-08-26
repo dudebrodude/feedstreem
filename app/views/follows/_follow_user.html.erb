@@ -1,0 +1,7 @@
+<% unless user == current_user %>
+<% if current_user.following?(user) %>
+<%= link_to("Following", user_follow_path(user.to_param, current_user.get_follow(user).id), :"data-no-turbolink"=>true, :method => :delete, :remote => true, :class => "btn btn-primary") %>
+<% else %>
+<%= link_to("Follow", user_follows_path(user.to_param), :"data-no-turbolink"=>true, :method => :post,:remote => true, :class => "btn btn-mini btn-primary") %>
+<% end %>
+<% end %>

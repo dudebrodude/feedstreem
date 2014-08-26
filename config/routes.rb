@@ -9,9 +9,10 @@ resources :clubs do
   resources :follows, :controller => 'follows_clubs', :only => [:create, :destroy]
 end
 
-  resources :users do
- resources :follows, :only => [:create, :destroy]
-  end
+ resources :users do
+resources :follows, :only => [:create, :destroy]
+
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

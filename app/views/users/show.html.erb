@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-<% if user_signed_in? %>
-<div id="follow_user">
-<%= render :partial => "shared/follow_user", :locals => {:user => @user} %>
+ <% if user_signed_in? %>
+<div id="follows_user">
+<%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
 </div>
+<% end %> 
+	<% @followers.each do |follower| %>
+<%= follower.email %>
 <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
