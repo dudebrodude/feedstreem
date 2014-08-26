@@ -4,6 +4,7 @@
 <% @following.each do |following| %>
 <%= following.name %>
 <% end %>
+
 <% else %>
 Welcome! Please <%= link_to 'Sign in', new_user_session_path %> to continue
 <% end %>

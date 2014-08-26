@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= @club.followers %>
 <p>
   <strong>Name:</strong>
   <%= @club.name %>
@@ -9,6 +8,15 @@
   <strong>Address:</strong>
   <%= @club.address %>
 </p>
+<p>
+  <strong>Name:</strong>
+  <%= @club.name %>
+</p>
+	<% @club.events.each do |event| %>
+
+	<%= link_to event.name, event %>
+<%= event.date %>
+<% end %>
 
 <div id="follows_club">
 <%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>

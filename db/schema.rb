@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140825221806) do
+ActiveRecord::Schema.define(version: 20140826054210) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -47,7 +47,10 @@ ActiveRecord::Schema.define(version: 20140825221806) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "club_id"
   end
+
+  add_index "events", ["club_id"], name: "index_events_on_club_id"
 
   create_table "follows", force: true do |t|
     t.integer  "followable_id",                   null: false
