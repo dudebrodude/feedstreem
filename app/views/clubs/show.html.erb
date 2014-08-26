@@ -10,5 +10,10 @@
   <%= @club.address %>
 </p>
 
+<div id="follows_club">
+<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
+</div>
+ 
+
 <%= link_to 'Edit', edit_club_path(@club) %> |
 <%= link_to 'Back', clubs_path %>

@@ -1,0 +1,6 @@
+<% if current_user.following?(club) %>
+<%= link_to("Following", club_follow_path(club.to_param, current_user.get_follow(club).id), :"data-no-turbolink"=>true, :method => :delete, :remote => true, :class => "btn btn-primary") %>
+<% else %>
+<%= link_to("Follow", club_follows_path(club.to_param), :"data-no-turbolink"=>true, :method => :post,:remote => true, :class => "btn btn-primary") %>
+<% end %>
+
