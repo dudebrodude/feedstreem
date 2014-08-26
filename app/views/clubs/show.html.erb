@@ -1,17 +1,10 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
   <%= @club.name %>
-</p>
 
-<p>
-  <strong>Address:</strong>
+
+ 
   <%= @club.address %>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @club.name %>
-</p>
+
 	<% @club.events.each do |event| %>
 
 	<%= link_to event.name, event %>
