@@ -34,6 +34,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
 gem 'autoprefixer-rails'
 gem 'merit'
+gem 'font-awesome-rails'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

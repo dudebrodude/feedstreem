@@ -1,21 +1,27 @@
 <p id="notice"><%= notice %></p>
-  <%= @club.name %>
-
-
- 
-  <%= @club.address %>
-
-	<% @club.events.each do |event| %>
-
-	<%= link_to event.name, event %>
-<%= event.date %>
-<% end %>
-
-<div id="follows_club">
-<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
+<div class="col-sm-3 panel">
+	<section>
+		<p class="section-title"><%= fa_icon 'building-o' %> Club Info</p>
+		<p><%= @club.name %></p>
+		<p><%= @club.address %></p>
+	</section>
+	<section>
+		<p class="section-title"><%= fa_icon 'photo' %> Photos</p>
+	</section>
+	<section>
+		<div id="follows_club">
+			<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
+		</div>
+	</section>
 </div>
-
- 
-
-<%= link_to 'Edit', edit_club_path(@club) %> |
-<%= link_to 'Back', clubs_path %>
+<div class="col-sm-6">
+</div>
+<div class="col-sm-3 panel">
+	<section>
+		<p class="section-title"><%= fa_icon 'calendar-o' %> Calendar</p>
+		<% @club.events.each do |event| %>
+		<p><%= event.date %></p>
+		<%= link_to event.name, event %>
+		<% end %>
+	</section>
+</div>

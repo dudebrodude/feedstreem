@@ -1,10 +1,15 @@
 <% if user_signed_in? %>
-<h1>Welcome, <%= current_user.email %></h1>
-<%= current_user.points %>
-<% @following.each do |following| %>
-<%= following.name %>
+<div class="col-sm-3 panel">
+	<section>
+		<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>
+		<%= current_user.points %></section>
+<section>
+	<p class="section-title"><%= fa_icon 'building-o' %> My Clubs</p>
+<% @club.each do |club| %>
+<%= club.name %>
 <% end %>
-
+</section>
+</div>
 <% else %>
 Welcome! Please <%= link_to 'Sign in', new_user_session_path %> to continue
 <% end %>
