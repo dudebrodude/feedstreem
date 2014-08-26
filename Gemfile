@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'acts_as_follower'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap_form'
 gem 'autoprefixer-rails'
 gem 'merit'
 
