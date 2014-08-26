@@ -35,6 +35,8 @@ gem 'bootstrap_form'
 gem 'autoprefixer-rails'
 gem 'merit'
 gem 'font-awesome-rails'
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+
 
 
 group :doc do

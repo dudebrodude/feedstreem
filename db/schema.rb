@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826054210) do
+ActiveRecord::Schema.define(version: 20140826091622) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20140826054210) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "events", force: true do |t|
@@ -118,6 +122,10 @@ ActiveRecord::Schema.define(version: 20140826054210) do
     t.string   "last_sign_in_ip"
     t.integer  "sash_id"
     t.integer  "level",                  default: 0
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

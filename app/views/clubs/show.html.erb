@@ -7,14 +7,16 @@
 	</section>
 	<section>
 		<p class="section-title"><%= fa_icon 'photo' %> Photos</p>
+		<%= image_tag @club.avatar.url(:thumb), class: "img-responsive" %>
 	</section>
 	<section>
-		<div id="follows_club">
-			<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
-		</div>
+
 	</section>
 </div>
 <div class="col-sm-6">
+	<div id="follows_club">
+		<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
+	</div>
 </div>
 <div class="col-sm-3 panel">
 	<section>
