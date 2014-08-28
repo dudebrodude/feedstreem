@@ -2,13 +2,7 @@
 <div class="col-sm-3">
 	
 	<div class="panel">
-		<section>
-			<p class="section-title">My Clubs</p>
-			<% @club.each do |club| %>
-			<%= image_tag club.avatar.url(:tiny), class: "img-responsive" %>
-			<%= club.name %>
-			<% end %>
-		</section>
+
 	</div>
 </div>
 <div class="col-sm-6">
@@ -21,9 +15,8 @@
 <div class="col-sm-3">
 	<div class="panel">
 		<section>
-			<p class="section-title">Point Balance</p>
+			<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>
 			<%= current_user.points %>
-			<p><%= fa_icon 'bar-chart-o' %> Recent Activity</p>
 		</section>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 Feedstreem::Application.routes.draw do
   resources :checkins
 
-  devise_for :users
+ devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   get "welcome/index"
   resources :events
 
