@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
 <div class="col-sm-3">
-	<%= image_tag current_user.avatar.url(:small), class: "img-responsive" %>
+	
 	<div class="panel">
 		<section>
-			<p class="section-title"><%= fa_icon 'building-o' %> My Clubs</p>
+			<p class="section-title">My Clubs</p>
 			<% @club.each do |club| %>
 			<%= image_tag club.avatar.url(:tiny), class: "img-responsive" %>
 			<%= club.name %>
