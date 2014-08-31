@@ -39,6 +39,9 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'geocoder'
+gem 'gmaps4rails'
+
 
 
 
