@@ -21,6 +21,18 @@
 	</div>
 </div>
 <% else %>
-Welcome! Please <%= link_to 'Sign in', new_user_session_path %> to continue
+<div class="panel row">
+	<div class="col-sm-4">
+<h1 class="panel-title">Welcome</h1> 
+<p class="panel-subtitle">Please Sign in to continue</p>
+<%= render 'devise/sessions/new' %>
+<p>Sign in with Twitter</p>
+<p>Sign in with Facebook</p>
+</div>
+<div class="col-sm-8">
+<h1 class="panel-title">What is Streemfeed?</h1>
+<p class="panel-subtitle">It's the shit bitch</p>
+</div>
+</div>
 <% end %>
 

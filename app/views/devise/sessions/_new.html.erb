@@ -1,0 +1,17 @@
+<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div>
+  <%= f.email_field :email, hide_label: :true, placeholder: 'Email', autofocus: true %></div>
+
+  <div>
+    <%= f.password_field :password, hide_label: :true, placeholder: 'Password', autocomplete: "off" %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %></div>
+  <% end -%>
+
+  <%= button_tag( :class => "btn btn-primary") do %>
+  Login <%= fa_icon 'edit' %> 
+<% end %>
+<% end %>
+
+

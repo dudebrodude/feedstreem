@@ -33,6 +33,7 @@ body , html{
     &:first-child {
       border: 0;
     }
+
 	.section-title {
     background: none repeat scroll 0 0 #0f0f0f;
     color: #888;
@@ -53,4 +54,21 @@ body , html{
       margin-top: 0px;
     }
   }
+}
+  .panel-title{
+    color:#888;
+    font: 1.75em 'Arial';
+    margin-top:5px;
+  }
+    .panel-subtitle{
+    color:#6e6e6e;
+    font: 1em 'Arial';
+    margin:5px 0 15px 0;
+  }
+  .checkbox label {
+    color:#6e6e6e;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-left: 20px;
 }
