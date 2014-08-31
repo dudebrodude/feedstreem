@@ -96,8 +96,20 @@ body , html{
 
 .club-info{
   font:1em 'Arial';
+  color:#666;
+  margin:5px;
+}
+.club-info-wait{
+  font:.85em 'Arial';
   color:#555;
   margin:5px;
+ }
+.club-options {
+    border-bottom: 1px solid #1f1f1f;
+    color: #777;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    padding-bottom: 5px;
 }
 td, th {
     padding: 5px;
@@ -108,6 +120,12 @@ td, th {
 }
 .bold{
   font-weight: bold;
+}
+.no-border{
+  border:0;
+}
+.directions{
+  margin-top:-15px;
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     background-color: #090909;
