@@ -5,8 +5,8 @@ body , html{
 	background:#0c0c0c;
 }
 .navbar-inverse {
-    background-color: #151515;
-    border-color: #1f1f1f;
+  background-color: #151515;
+  border-color: #1f1f1f;
 }
 #logo {
   color: #a2a2a2;
@@ -34,13 +34,13 @@ body , html{
       border: 0;
     }
 
-	.section-title {
-    background: none repeat scroll 0 0 #0f0f0f;
-    color: #888;
-    margin: -10px -10px 5px;
-    padding: 5px;
-    border-bottom: 1px solid #1f1f1f;
-	}
+    .section-title {
+      background: none repeat scroll 0 0 #0f0f0f;
+      color: #888;
+      margin: -10px -10px 5px;
+      padding: 5px;
+      border-bottom: 1px solid #1f1f1f;
+    }
     span {
       display: block;
       margin-bottom: 3px;
@@ -55,20 +55,51 @@ body , html{
     }
   }
 }
-  .panel-title{
-    color:#888;
-    font: 1.75em 'Arial';
-    margin-top:5px;
-  }
-    .panel-subtitle{
-    color:#6e6e6e;
-    font: 1em 'Arial';
-    margin:5px 0 15px 0;
-  }
-  .checkbox label {
-    color:#6e6e6e;
-    cursor: pointer;
-    font-weight: normal;
+.panel-title{
+  color:#888;
+  font: 1.75em 'Arial';
+  margin-top:5px;
+}
+.panel-subtitle{
+  color:#6e6e6e;
+  font: 1em 'Arial';
+  margin:5px 0 15px 0;
+}
+.checkbox label {
+  color:#6e6e6e;
+  cursor: pointer;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+.club-dropdown{
+     margin: -20px 0 10px;
+}
+.club-avatars {
+  margin: 15px 0 -25px;
+  overflow: auto;
+}
+.club-list {
+    border: 1px solid #222;
+    border-radius: 3px;
     margin-bottom: 0;
-    padding-left: 20px;
+}
+.club-name{
+  font:1.3em 'Arial';
+  color:#777;
+  margin-bottom:5px;
+}
+.club-list-name{
+  font:bold 1em 'Arial';
+  color:#777;
+}
+
+.club-info{
+  font:1em 'Arial';
+  color:#555;
+  margin:5px;
+}
+td, th {
+    padding: 5px;
+    border-bottom:1px solid #1f1f1f;
 }

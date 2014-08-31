@@ -1,8 +1,10 @@
 <div class="col-sm-3 panel">
 	<section>
 		<p class="section-title">Club Info</p>
-		<p><%= @club.name %></p>
-		<p><%= @club.address %></p>
+		<p class="club-name"><%= @club.name %></p>
+		<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
+		<p class="club-info"><%= fa_icon 'building-o' %> <%= @club.address %></p>
+		
 	</section>
 	<section>
 		<p class="section-title"><%= fa_icon 'photo' %> Photos</p>

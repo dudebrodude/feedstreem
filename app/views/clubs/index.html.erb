@@ -1,29 +1,45 @@
-<h1>Listing clubs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
+<div class="col-sm-3">
+  <div class="panel">
+    <section>
+      <div class="section-title">
+        <%= fa_icon 'search' %> Search Clubs
+      </div>
+    </section>
+  </div>
+</div>
+<div class="col-sm-6">
+ <div class="panel">
+  <section>
+    <div class="section-title">
+      All Clubs
+    </div>
+  </section>
+  <div class="club-dropdown">
+   <div class="dropdown">
+  <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+    Sort By <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+   <p>Distance</p>
+   <p>Popularity</p>
+  </ul>
+  </div>
+</div>
+ <section>
+  <table>
   <tbody>
     <% @clubs.each do |club| %>
       <tr>
-        <td><%= club.name %></td>
-        <td><%= club.address %></td>
-        <td><%= link_to 'Show', club %></td>
-        <td><%= link_to 'Edit', edit_club_path(club) %></td>
-        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag club.avatar.url(:tiny) %> </td>
+        <td class="club-list-name"><%= club.name %></td>
+        <td class="club-info"><%= club.address %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</section>
+ </div>
+</div>
 
-<br>
 
-<%= link_to 'New Club', new_club_path %>
+

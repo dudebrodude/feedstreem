@@ -1,29 +1,45 @@
-<h1>Listing users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
+<div class="col-sm-3">
+  <div class="panel">
+    <section>
+      <div class="section-title">
+        <%= fa_icon 'search' %> Search People
+      </div>
+    </section>
+  </div>
+</div>
+<div class="col-sm-6">
+ <div class="panel">
+  <section>
+    <div class="section-title">
+      All People
+    </div>
+  </section>
+  <div class="club-dropdown">
+   <div class="dropdown">
+  <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+    Sort By <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <p>Popularity</p>
+  </ul>
+  </div>
+</div>
+ <section>
+  <table>
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag user.avatar.url(:tiny) %> </td>
         <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.location %></td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
+</section>
+ </div>
+</div>
 
-<br>
 
-<%= link_to 'New User', new_user_path %>
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140828230736) do
+ActiveRecord::Schema.define(version: 20140831063229) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140828230736) do
 
   create_table "clubs", force: true do |t|
     t.string   "name"
+    t.string   "phone"
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"

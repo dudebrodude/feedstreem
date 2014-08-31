@@ -1,0 +1,35 @@
+<div class="col-sm-3">
+	<div class="panel">
+		<section>
+			<p class="section-title">My Clubs</p>
+
+		  <table>
+  <tbody>
+    <% @club.each do |club| %>
+      <tr>
+        <td><%= image_tag club.avatar.url(:tiny) %> </td>
+        <td class="club-list-name"><%= club.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+		</div>
+
+	</section>
+</div>
+<div class="col-sm-6">
+	<div class="panel">
+		<section>
+			<p class="section-title"><%= fa_icon 'clock-o' %> Today</p>
+		</section>
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="panel">
+		<section>
+			<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>
+			<%= current_user.points %>
+		</section>
+	</div>
+</div>
+
