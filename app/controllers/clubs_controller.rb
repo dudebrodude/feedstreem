@@ -14,7 +14,6 @@ class ClubsController < ApplicationController
       marker.lat club.latitude
       marker.lng club.longitude
 end
-
   end
 
   # GET /clubs/new
