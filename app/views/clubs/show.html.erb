@@ -22,7 +22,7 @@
 			<p class="club-options no-border"><%= fa_icon 'bookmark' %> Reserve Table </p>
 	
 	<section>
-		<p class="section-title"><%= fa_icon 'photo' %> Photos</p>
+		<p class="section-title">Photos</p>
 		<%= image_tag @club.avatar.url(:thumb), class: "img-responsive" %>
 	</section>
 	<section>
@@ -30,18 +30,19 @@
 	</section>
 </div>
 <div class="col-sm-6">
-	<div id="follows_club">
-		<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
-	</div>
+	<section>
+		<p class="section-title">Calendar</p>
+	</section>
+	<%= render 'calendar'%>
+
+
+
+
 
 
 </div>
+	
+
 <div class="col-sm-3 panel">
-	<section>
-		<p class="section-title">Calendar</p>
-		<% @club.events.each do |event| %>
-		<p><%= event.date %></p>
-		<%= link_to event.name, event %>
-		<% end %>
-	</section>
+<%= render 'follow' %>
 </div>

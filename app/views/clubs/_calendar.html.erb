@@ -1,0 +1,11 @@
+		<% @club.events.each do |event| %>
+		<div class="col-sm-4">
+
+		<div class="panel">
+			<section>
+				<p class="section-title"><%= event.date.strftime("%a %m/%e ") %></p>
+		
+		<%= link_to event.name, event %>
+		</div>
+		</div>
+		<% end %>

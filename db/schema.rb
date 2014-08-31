@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831102011) do
+ActiveRecord::Schema.define(version: 20140831113015) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(version: 20140831102011) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "club_id"
+    t.string   "flyer_file_name"
+    t.string   "flyer_content_type"
+    t.integer  "flyer_file_size"
+    t.datetime "flyer_updated_at"
   end
 
   add_index "events", ["club_id"], name: "index_events_on_club_id"
