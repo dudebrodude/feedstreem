@@ -33,6 +33,7 @@
         <td><%= image_tag club.avatar.url(:tiny) %> </td>
         <td class="club-list-name"><%= club.name %></td>
         <td class="club-info"><%= club.address %></td>
+        <td><%= link_to 'View', club_path(club), class: "btn btn-primary" %> </td>
       </tr>
     <% end %>
   </tbody>

@@ -32,6 +32,7 @@
         <td><%= image_tag user.avatar.url(:tiny) %> </td>
         <td><%= user.name %></td>
         <td><%= user.location %></td>
+        <td><%= link_to 'View', user_path(user), class: "btn btn-primary" %> </td>
         
       </tr>
     <% end %>

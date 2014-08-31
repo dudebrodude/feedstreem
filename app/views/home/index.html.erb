@@ -1,14 +1,23 @@
-<div class="col-sm-3">
+<div class="col-md-3">
 	<div class="panel">
 		<section>
 			<p class="section-title">My Clubs</p>
 
 		  <table>
+		  	  <thead>
+    <tr>
+    <th>Club</th>
+      <th></th>
+     <th>Wait Time</th>
+
+    </tr>
+  </thead>
   <tbody>
     <% @club.each do |club| %>
       <tr>
-        <td><%= image_tag club.avatar.url(:tiny) %> </td>
-        <td class="club-list-name"><%= club.name %></td>
+        <td><%= image_tag club.avatar.url(:tiny), class: "img-responsive" %> </td>
+        <td class="club-list-name text-center"><%= club.name %></td>
+        <td class="club-list-name text-center"><%= club.wait %> min</td>
       </tr>
     <% end %>
   </tbody>
@@ -17,14 +26,14 @@
 
 	</section>
 </div>
-<div class="col-sm-6">
+<div class="col-md-6">
 	<div class="panel">
 		<section>
 			<p class="section-title"><%= fa_icon 'clock-o' %> Today</p>
 		</section>
 	</div>
 </div>
-<div class="col-sm-3">
+<div class="col-md-3">
 	<div class="panel">
 		<section>
 			<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>

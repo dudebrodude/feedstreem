@@ -90,7 +90,7 @@ body , html{
   margin-bottom:5px;
 }
 .club-list-name{
-  font:bold 1em 'Arial';
+  font:1em 'Arial';
   color:#777;
 }
 
@@ -102,4 +102,14 @@ body , html{
 td, th {
     padding: 5px;
     border-bottom:1px solid #1f1f1f;
+}
+.text-center{
+  text-align: center;
+}
+.bold{
+  font-weight: bold;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #090909;
+    color: #999;
 }

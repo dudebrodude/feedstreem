@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831063229) do
+ActiveRecord::Schema.define(version: 20140831095305) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20140831063229) do
 
   create_table "clubs", force: true do |t|
     t.string   "name"
-    t.string   "phone"
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,6 +44,8 @@ ActiveRecord::Schema.define(version: 20140831063229) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "phone"
+    t.integer  "wait"
   end
 
   create_table "events", force: true do |t|
