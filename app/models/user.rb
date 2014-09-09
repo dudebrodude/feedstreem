@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   has_merit
   has_many :checkins
+  has_many :images
   acts_as_follower
 	acts_as_followable
 
