@@ -3,7 +3,13 @@
 <div class="col-sm-3 panel">
 	<section>
 		<p class="section-title">Club Info</p>
-		<p class="club-info-wait pull-right">Estimated Wait: <%= @club.wait %> min</p>
+		<p class="club-info-wait pull-right">Estimated Wait: 
+			<%= @club.wait %> min
+									<% if @club.wait <= 10 %>
+							<%= image_tag('green.png') %> 
+							<% elsif @club.wait <= 15 %>
+							<%= image_tag('yellow.png') %>   
+							<% end %></p>
 		<p class="club-name"><%= @club.name %></p>
 		<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
 		<p class="club-info"><%= fa_icon 'building-o' %> <%= @club.address %></p>
