@@ -2,48 +2,48 @@
 	<div class="panel">
 		<section>
 			<p class="section-title">My Clubs</p>
-
-		  <table>
-		  	  <thead>
-    <tr>
-    <th>Club</th>
-      <th></th>
-     <th>Wait Time</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <% @club.each do |club| %>
-      <tr>
-        <td><%= image_tag club.avatar.url(:tiny), class: "img-responsive" %> </td>
-        <td class="club-list-name text-center"><%= club.name %></td>
-        <td class="club-list-name text-center"><%= club.wait %> min</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+			<table>
+				<thead>
+					<tr>
+						<th>Club</th>
+						<th></th>
+						<th>Wait Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @club.each do |club| %>
+					<tr>
+						<td><%= image_tag club.avatar.url(:tiny), class: "img-responsive" %> </td>
+						<td class="club-list-name text-center"><%= club.name %></td>
+						<td class="club-list-name text-center">
+							<% if club.wait <= 10 %>
+							<%= image_tag('green.png') %> <%= club.wait %> min  
+							<% elsif club.wait <= 15 %>
+							<%= image_tag('yellow.png') %>  <%= club.wait %> min 
+							<%end %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+	<div class="col-md-6">
+		<div class="panel">
+			<section>
+				<p class="section-title"><%= fa_icon 'clock-o' %> Today</p>
+			</section>
+			<% @upcoming_events.each do |event| %>
+			<%= event.name %> - <%= event.start_time %><br />
+			<% end %>
 		</div>
-
-	</section>
-</div>
-<div class="col-md-6">
-	<div class="panel">
-		<section>
-			<p class="section-title"><%= fa_icon 'clock-o' %> Today</p>
-		</section>
-		
-
-  <% @upcoming_events.each do |event| %>
-    <%= event.name %> - <%= event.start_time %><br />
-  <% end %>
 	</div>
-</div>
-<div class="col-md-3">
-	<div class="panel">
-		<section>
-			<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>
-			<%= current_user.points %>
-		</section>
+	<div class="col-md-3">
+		<div class="panel">
+			<section>
+				<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>
+				<%= current_user.points %>
+			</section>
+		</div>
 	</div>
-</div>
 
