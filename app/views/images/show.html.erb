@@ -1,18 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @image.user %>
-</p>
-
+<%= image_tag @image.image.url(:tiny) %>
+<%= image_tag @image.image.url(:thumb) %>
+<%= image_tag @image.image.url(:small) %>
+<%= image_tag @image.image.url(:medium) %>
 <p>
   <strong>Club:</strong>
   <%= @image.club %>
-</p>
-
-<p>
-  <strong>Event:</strong>
-  <%= @image.event %>
 </p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |

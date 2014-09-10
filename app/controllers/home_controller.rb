@@ -11,11 +11,21 @@ class HomeController < ApplicationController
    		 #Instantiate a new page class using the page_id specified 
    		 @page = FbGraph::Page.new(config['production']['page_id'], :access_token => acc_tok).fetch;
 
+               #Get wall posts
+       @wall = FbGraph::Page.new(config['production']['page_id'], :access_token => acc_tok).posts;
+
    		 #Grab the events from the page 
    		 events = @page.events.sort_by{|e| e.start_time};
-   		 
+
+       #Grab the picture from the page 
+       picture = @page.picture;
+
+ 		 
  		   #Get the events that are upcoming
  		   @upcoming_events = events.find_all{|e| e.start_time >= Time.now};
+
+        #Get the picture
+       @fbpic = picture;
 
    		 #Get the events that have passed
    		 @past_events = events.find_all{|e| e.start_time < Time.now}.reverse;

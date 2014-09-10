@@ -40,6 +40,12 @@
 		<% @upcoming_events.each do |event| %>
 		<%= event.name %> - <%= event.start_time %><br />
 		<% end %>
+				
+		<%= @fbpic %>
+		<%= image_tag @fbpic %><br />
+
+		<%= @wall %>
+		
 	</div>
 </div>
 <div class="col-md-3">

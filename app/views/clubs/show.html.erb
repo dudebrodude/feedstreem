@@ -5,50 +5,45 @@
 		<p class="section-title">Club Info</p>
 		<p class="club-info-wait pull-right">Estimated Wait: 
 			<%= @club.wait %> min
-									<% if @club.wait <= 10 %>
-							<%= image_tag('green.png') %> 
-							<% elsif @club.wait <= 15 %>
-							<%= image_tag('yellow.png') %>   
-							<% end %></p>
-		<p class="club-name"><%= @club.name %></p>
-		<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
-		<p class="club-info"><%= fa_icon 'building-o' %> <%= @club.address %></p>
+			<% if @club.wait <= 10 %>
+			<%= image_tag('green.png') %> 
+			<% elsif @club.wait <= 15 %>
+			<%= image_tag('yellow.png') %>   
+			<% end %></p>
+			<p class="club-name"><%= @club.name %></p>
+			<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
+			<p class="club-info"><%= fa_icon 'building-o' %> <%= @club.address %></p>
+
+		</section>
+		<section>
+			<%= render 'gmap' %>
+		</section>
+		<section>
+			<p class="section-title">Options</p>
+		</section>
+		<p><div id="follows_club">
+			<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
+		</div></p>
+		<p class="club-options"><%= fa_icon 'taxi' %> Get Directions</p>
+		<p class="club-options"><%= fa_icon 'spinner' %> View Live Streem </p>
+		<p class="club-options"><%= fa_icon 'photo' %> View All Photos </p>
+		<p class="club-options no-border"><%= fa_icon 'bookmark' %> Reserve Table </p>
+
+		<section>
+			<p class="section-title">Photos</p>
+			<%= image_tag @club.avatar.url(:thumb), class: "img-responsive" %>
+		</section>
+		<section>
+
+		</section>
+	</div>
+	<div class="col-sm-6">
+		<section>
+			<p class="section-title">Calendar</p>
+		</section>
+		<%= render 'calendar'%>
+	</div>
+	<div class="col-sm-3 panel">
+		<%= render 'photos' %>
 		
-	</section>
-	<section>
-		<%= render 'gmap' %>
-
-	</section>
-	<section>
-		<p class="section-title">Options</p>
-	</section>
-			<p class="club-options directions"><%= fa_icon 'taxi' %> Get Directions</p>
-			<p class="club-options"><%= fa_icon 'spinner' %> View Live Streem </p>
-			<p class="club-options"><%= fa_icon 'photo' %> View All Photos </p>
-			<p class="club-options no-border"><%= fa_icon 'bookmark' %> Reserve Table </p>
-	
-	<section>
-		<p class="section-title">Photos</p>
-		<%= image_tag @club.avatar.url(:thumb), class: "img-responsive" %>
-	</section>
-	<section>
-
-	</section>
-</div>
-<div class="col-sm-6">
-	<section>
-		<p class="section-title">Calendar</p>
-	</section>
-	<%= render 'calendar'%>
-
-
-
-
-
-
-</div>
-	
-
-<div class="col-sm-3 panel">
-<%= render 'follow' %>
-</div>
+	</div>
