@@ -41,6 +41,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'fb_graph'
 
 
 

@@ -1,0 +1,13 @@
+#config/facebook.yml
+development: &defaults
+  app_id: 788011881219719
+  client_id: 788011881219719
+  client_secret: 02c1de8fc5505d3f1a4a6461a36119fc
+  perms: offline_access,manage_pages
+  page_id: 938360619524371
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
