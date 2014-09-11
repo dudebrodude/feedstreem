@@ -2,48 +2,53 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 <div class="col-sm-3 panel">
 	<section>
-		<p class="section-title">Club Info</p>
-		<p class="club-info-wait pull-right">Estimated Wait: 
-			<%= @club.wait %> min
-			<% if @club.wait <= 10 %>
-			<%= image_tag('green.png') %> 
-			<% elsif @club.wait <= 15 %>
-			<%= image_tag('yellow.png') %>   
-			<% end %></p>
-			<p class="club-name"><%= @club.name %></p>
-			<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
-			<p class="club-info"><%= fa_icon 'building-o' %> <%= @club.address %></p>
-
+		<div class="club-name-header">
+		<p class="club-name"><%= @club.name %></p>
+		<%= render 'wait' %>
+		</div>
+		<div class="club-avatar"><center><%= image_tag @club.avatar.url(:small), class: "img-responsive" %></center></div>
 		</section>
+		
 		<section>
+			<p class="section-title">info</p>
+						<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
+			<p class="club-address"><%= fa_icon 'home' %> <%= @club.address %></p>
 			<%= render 'gmap' %>
+
 		</section>
 		<section>
 			<p class="section-title">Options</p>
 		</section>
-		<p><div id="follows_club">
-			<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
-		</div></p>
-		<p class="club-options"><%= fa_icon 'taxi' %> Get Directions</p>
-		<p class="club-options"><%= fa_icon 'spinner' %> View Live Streem </p>
-		<p class="club-options"><%= fa_icon 'photo' %> View All Photos </p>
-		<p class="club-options no-border"><%= fa_icon 'bookmark' %> Reserve Table </p>
-
-		<section>
-			<p class="section-title">Photos</p>
-			<%= image_tag @club.avatar.url(:thumb), class: "img-responsive" %>
-		</section>
-		<section>
-
-		</section>
+		<%= render 'options' %>
 	</div>
 	<div class="col-sm-6">
+		<div class="panel">
+			<section>
+				<p class="section-title">Photos</p>
+				<%= fa_icon 'photo' %> <%= render 'photos' %>
+				<table>
+					<tbody>
+						<tr>
+							<% @club.images.first(4).each do |image| %>
+
+							<td><%=link_to(image_tag(image.image.url(:thumb)), image_path(image), class: "img-responsive")  %></td>
+							<% end %>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+		
+	</div>
+	<div class="col-sm-3 panel">
 		<section>
 			<p class="section-title">Calendar</p>
 		</section>
-		<%= render 'calendar'%>
-	</div>
-	<div class="col-sm-3 panel">
-		<%= render 'photos' %>
+		<section>
+					<% @upcoming_events.each do |event| %>
+		<%= event.name %> - <%= event.start_time %><br />
+		<% end %>
+	</section>
+		
 		
 	</div>
