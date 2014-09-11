@@ -3,7 +3,16 @@
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      ...
+     <h1><%= @club.name %> Images</h1>
+<table>
+  <tbody>
+  <% @club.images.each do |image| %>
+      <tr>
+        <td><%=link_to( image_tag(image.image.url(:thumb)), image_path(image), class: "img-responsive") %></td>
+       </tr>
+    <% end %>
+  </tbody>
+</table>
     </div>
   </div>
 </div>
