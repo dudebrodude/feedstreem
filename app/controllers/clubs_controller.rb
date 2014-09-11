@@ -28,11 +28,18 @@ end
                #Get wall posts
        @wall = FbGraph::Page.new(config['production']['page_id'], :access_token => acc_tok).posts;
 
+
+
+
+
+
        #Grab the events from the page 
        events = @page.events.sort_by{|e| e.start_time};
 
        #Grab the picture from the page 
        picture = @page.picture;
+
+      
 
      
        #Get the events that are upcoming

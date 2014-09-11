@@ -33,17 +33,27 @@
 		</section>
 	</div>
 </div>
-<div class="col-sm-3 panel">
+<div class="col-sm-3">
 	<section>
-		<p class="section-title">Calendar</p>
+		upcoming
+				<div class="col-sm-12">
 		<% @upcoming_events.each do |event| %>
-		<p class="event-date">
+		<div class="event-date">
 			<%= event.start_time.strftime('%a %b %d') %>
-		</p>
-		<div class="event-info">
-			<p><%= event.name %></p>
-			<p>Doors <%= event.start_time.strftime(' %l%P') %></p>
 		</div>
-		<% end %>
+		</div>
+		<div class="col-sm-12 event-info">
+			<div class="col-md-4">
+			<center><p><%= image_tag event.picture %></p></center>
+			</div>
+			<div class="col-md-8">
+			<p class="event-name"><%= event.name %></p>
+			<p class="event-time">Doors <%= event.start_time.strftime(' %l%P') %></p>
+
+			<% end %>
+					</div>
+					</div>
+		</div>
+		
 	</section>
 </div>
