@@ -3,7 +3,7 @@
 @import "rails_bootstrap_forms";
 @import "spacing";
 body , html{
-	background:#0c0c0c;
+  background:#0c0c0c;
       color:#777;
 }
 .navbar-inverse {
@@ -144,11 +144,12 @@ body , html{
     padding: 5px;
 }
 .event-info {
-    background: none repeat scroll 0 0 #222;
-    border: 1px solid #282828;
-    margin: 2px 0 1px;
-    padding: 3px;
-}
+    background: none repeat scroll 0 0 #151515;
+    border: 1px solid #1e1e1e;
+    border-radius: 0 0 3px 3px;
+    margin: 1px 0 10px;
+    padding: 8px 5px 0 9px;
+  }
 .event-name{
   font: 1.25em 'Arial';
   text-align:center;
