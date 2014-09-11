@@ -4,8 +4,10 @@
 		<div class="panel">
 			<section>
 				<p class="section-title"><%= event.date.strftime("%a %m/%e ") %></p>
-		
+		<center>
 		<%= link_to event.name, event %>
+		<%= image_tag event.flyer.url(:thumb), class: "img-responsive" %>
+	</center>
 		</div>
 		</div>
 		<% end %>

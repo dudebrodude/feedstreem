@@ -1,4 +1,7 @@
 Feedstreem::Application.routes.draw do
+
+  resources :images
+
   get "home/index"
   resources :checkins
 

@@ -2,28 +2,34 @@
 	<div class="panel">
 		<section>
 			<p class="section-title">My Clubs</p>
-
-		  <table>
-		  	  <thead>
-    <tr>
-    <th>Club</th>
-      <th></th>
-     <th>Wait Time</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <% @club.each do |club| %>
-      <tr>
-        <td><%= image_tag club.avatar.url(:tiny), class: "img-responsive" %> </td>
-        <td class="club-list-name text-center"><%= club.name %></td>
-        <td class="club-list-name text-center"><%= club.wait %> min</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+			<table>
+				<thead>
+					<tr>
+						<th>Club</th>
+						<th></th>
+						<th>Wait</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @club.each do |club| %>
+					<tr>
+						<td><%= image_tag club.avatar.url(:tiny), class: "img-responsive" %> </td>
+						<td class="club-list-name text-center"><%= club.name %></td>
+						<td class="club-list-name text-center">
+							<%= club.wait %> min
+						</td>
+						<td class="club-list-name text-center">
+							<% if club.wait <= 10 %>
+							<%= image_tag('green.png') %> 
+							<% elsif club.wait <= 15 %>
+							<%= image_tag('yellow.png') %>   
+							<% end %>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
 		</div>
-
 	</section>
 </div>
 <div class="col-md-6">
@@ -31,6 +37,13 @@
 		<section>
 			<p class="section-title"><%= fa_icon 'clock-o' %> Today</p>
 		</section>
+
+				
+	
+	
+
+
+		
 	</div>
 </div>
 <div class="col-md-3">

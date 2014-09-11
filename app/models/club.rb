@@ -4,6 +4,7 @@ class Club < ActiveRecord::Base
 	acts_as_followable
 	has_many :checkins
 	has_many :events
+	has_many :images
 	geocoded_by :address
 	after_validation :geocode
 	def to_s

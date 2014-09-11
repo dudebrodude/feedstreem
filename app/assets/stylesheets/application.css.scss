@@ -1,8 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "rails_bootstrap_forms";
+@import "spacing";
 body , html{
 	background:#0c0c0c;
+      color:#777;
 }
 .navbar-inverse {
   background-color: #151515;
@@ -54,6 +56,16 @@ body , html{
       margin-top: 0px;
     }
   }
+  .panel-footer{
+  background:#191919;
+  border:none;
+  }
+  .footer-text {
+    color: #777;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    padding-bottom: 5px;
+}
 }
 .panel-title{
   color:#888;
@@ -84,14 +96,23 @@ body , html{
     border-radius: 3px;
     margin-bottom: 0;
 }
-.club-name{
-  font:1.3em 'Arial';
-  color:#777;
-  margin-bottom:5px;
+.club-name-header {
+    background: none repeat scroll 0 0 #0e0e0e;
+    margin: -10px -10px 10px;
+    padding: 5px 5px 1px;
+}
+.club-name {
+    color: #777;
+    font: 1.3em 'Arial';
+    margin-bottom: 0;
+    margin-left: 5px;
 }
 .club-list-name{
   font:1em 'Arial';
   color:#777;
+}
+.club-avatar{
+  margin-bottom:10px;
 }
 
 .club-info{
@@ -99,17 +120,45 @@ body , html{
   color:#666;
   margin:5px;
 }
-.club-info-wait{
-  font:.85em 'Arial';
-  color:#555;
-  margin:5px;
- }
+.club-address{
+  font:1em 'Arial';
+  color:#666;
+  margin:5px 5px 10px 5px;
+}
+.club-info-wait {
+    color: #555;
+    font: 0.85em 'Arial';
+    margin: 5px 5px 10px;
+}
 .club-options {
     border-bottom: 1px solid #1f1f1f;
     color: #777;
     margin-bottom: 7px;
     margin-left: 5px;
     padding-bottom: 5px;
+}
+.event-date {
+    background: none repeat scroll 0 0 #0e0e0e;
+    border: 1px solid #1d1d1d;
+    margin: 1px -17px;
+    padding: 5px;
+}
+.event-info {
+    background: none repeat scroll 0 0 #151515;
+    border: 1px solid #1e1e1e;
+    border-radius: 0 0 3px 3px;
+    margin: 1px 0 10px 1px;
+    padding: 8px 5px 0 9px;
+}
+.event-name{
+  font: 1.25em 'Arial';
+  text-align:center;
+}
+.event-time {
+    color: #555555;
+    font: 0.9em 'Arial';
+    margin-top: -10px;
+    text-align: center;
 }
 td, th {
     padding: 5px;
@@ -130,4 +179,11 @@ td, th {
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     background-color: #090909;
     color: #999;
+}
+#follows_club{
+      border-bottom: 1px solid #1f1f1f;
+    color: #777;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    padding-bottom: 5px;
 }

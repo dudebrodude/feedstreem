@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @image.image.url(:tiny) %>
+<%= image_tag @image.image.url(:thumb) %>
+<%= image_tag @image.image.url(:small) %>
+<%= image_tag @image.image.url(:medium) %>
+<%= image_tag @image.image.url %>
+<p>
+  <strong>Club:</strong>
+  <%= @image.club %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

@@ -1,0 +1,8 @@
+		<p class="club-info-wait">Estimated Wait: 
+			<%= @club.wait %> min
+			<% if @club.wait <= 10 %>
+			<%= image_tag('green.png') %> 
+			<% elsif @club.wait <= 15 %>
+			<%= image_tag('yellow.png') %>   
+			<% end %>
+		</p>
