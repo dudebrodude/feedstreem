@@ -4,6 +4,7 @@
 @import "spacing";
 body , html{
 	background:#0c0c0c;
+      color:#777;
 }
 .navbar-inverse {
   background-color: #151515;
@@ -135,6 +136,18 @@ body , html{
     margin-bottom: 7px;
     margin-left: 5px;
     padding-bottom: 5px;
+}
+.event-date {
+    background: none repeat scroll 0 0 #0e0e0e;
+    border: 1px solid #282828;
+    margin: 1px -9px;
+    padding: 5px;
+}
+.event-info {
+    background: none repeat scroll 0 0 #222;
+   border: 1px solid #282828;
+    margin: 1px -9px;
+    padding: 5px;
 }
 td, th {
     padding: 5px;

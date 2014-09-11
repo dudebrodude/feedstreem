@@ -3,52 +3,47 @@
 <div class="col-sm-3 panel">
 	<section>
 		<div class="club-name-header">
-		<p class="club-name"><%= @club.name %></p>
-		<%= render 'wait' %>
+			<p class="club-name"><%= @club.name %></p>
+			<%= render 'wait' %>
 		</div>
 		<div class="club-avatar"><center><%= image_tag @club.avatar.url(:small), class: "img-responsive" %></center></div>
-		</section>
-		
+		<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
+		<p class="club-address"><%= fa_icon 'home' %> <%= @club.address %></p>
+		<%= render 'gmap' %>
+	</section>
+	<section>
+		<p class="section-title">Options</p>
+	</section>
+	<%= render 'options' %>
+</div>
+<div class="col-sm-6">
+	<div class="panel">
 		<section>
-			<p class="section-title">info</p>
-						<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
-			<p class="club-address"><%= fa_icon 'home' %> <%= @club.address %></p>
-			<%= render 'gmap' %>
-
+			<p class="section-title">Photos</p>
+			<%= fa_icon 'photo' %> <%= render 'photos' %>
+			<table>
+				<tbody>
+					<tr>
+						<% @club.images.first(4).each do |image| %>
+						<td><%=link_to(image_tag(image.image.url(:thumb)), image_path(image), class: "img-responsive")  %></td>
+						<% end %>
+					</tr>
+				</tbody>
+			</table>
 		</section>
-		<section>
-			<p class="section-title">Options</p>
-		</section>
-		<%= render 'options' %>
 	</div>
-	<div class="col-sm-6">
-		<div class="panel">
-			<section>
-				<p class="section-title">Photos</p>
-				<%= fa_icon 'photo' %> <%= render 'photos' %>
-				<table>
-					<tbody>
-						<tr>
-							<% @club.images.first(4).each do |image| %>
-
-							<td><%=link_to(image_tag(image.image.url(:thumb)), image_path(image), class: "img-responsive")  %></td>
-							<% end %>
-						</tr>
-					</tbody>
-				</table>
-			</section>
+</div>
+<div class="col-sm-3 panel">
+	<section>
+		<p class="section-title">Calendar</p>
+		<% @upcoming_events.each do |event| %>
+		<p class="event-date">
+			<%= event.start_time.strftime('%a %b %d') %>
+		</p>
+		<div class="event-info">
+			<p><%= event.name %></p>
+			<p>Doors <%= event.start_time.strftime(' %l%P') %></p>
 		</div>
-		
-	</div>
-	<div class="col-sm-3 panel">
-		<section>
-			<p class="section-title">Calendar</p>
-		</section>
-		<section>
-					<% @upcoming_events.each do |event| %>
-		<%= event.name %> - <%= event.start_time %><br />
 		<% end %>
 	</section>
-		
-		
-	</div>
+</div>
