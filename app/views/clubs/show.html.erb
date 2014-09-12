@@ -4,11 +4,12 @@
 	<section>
 		<div class="club-name-header">
 			<p class="club-name"><%= @club.name %></p>
+					<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
+		<p class="club-address"><%= fa_icon 'home' %> <%= @club.address %></p>
 			<%= render 'wait' %>
 		</div>
-		<div class="club-avatar"><center><%= image_tag @club.avatar.url(:small), class: "img-responsive" %></center></div>
-		<p class="club-info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
-		<p class="club-address"><%= fa_icon 'home' %> <%= @club.address %></p>
+
+
 		<%= render 'gmap' %>
 	</section>
 	<section>
@@ -17,46 +18,37 @@
 	<%= render 'options' %>
 </div>
 <div class="col-sm-6">
-	<div class="panel">
-		<section>
-			<p class="section-title">Photos</p>
-			<%= fa_icon 'photo' %> <%= render 'photos' %>
-			<table>
-				<tbody>
-					<tr>
-						<% @club.images.first(4).each do |image| %>
-						<td><%=link_to(image_tag(image.image.url(:thumb)), image_path(image), class: "img-responsive")  %></td>
-						<% end %>
-					</tr>
-				</tbody>
-			</table>
+
+	<div class="slideshow-panel">
+			<section>
+		<p class="slideshow-title">
+<%= fa_icon 'photo' %> Photos - View All </span>
+		</p>
 		</section>
-	</div>
+		
+<%= render 'slideshow' %>
+
+</div>
 </div>
 <div class="col-sm-3">
 	<section>
-				<% @upcoming_events.each do |event| %>
-					<div class="col-sm-12">
+		<% @upcoming_events.each do |event| %>
+		<div class="col-sm-12">
 
-		<div class="event-date">
-			<%= event.start_time.strftime('%a %b %d') %>
-		</div>
+			<div class="event-date">
+				<%= event.start_time.strftime('%a %b %d') %>
+			</div>
 		</div>
 		<div class="col-sm-12 event-info">
 			<div class="col-md-4">
-			<center><p><%= image_tag event.picture %></p></center>
+				<center><p><%= image_tag event.picture %></p></center>
 			</div>
 			<div class="col-md-8 mt5">
-			<p class="event-name"><%= event.name %></p>
-			<p class="event-time">Doors <%= event.start_time.strftime(' %l%P') %></p>
-
-
-					</div>
-
-			
-					</div>
-<% end %>
+				<p class="event-name"><%= event.name %></p>
+				<p class="event-time">Doors <%= event.start_time.strftime(' %l%P') %></p>
+			</div>
 		</div>
-		
-	</section>
+		<% end %>
+	</div>
+</section>
 </div>

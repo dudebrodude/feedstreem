@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require owl.carousel
 //= require turbolinks
 //= require underscore
 //= require gmaps/google

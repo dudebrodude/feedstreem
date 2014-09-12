@@ -1,0 +1,29 @@
+		<div class="owl-carousel">
+			<% @club.images.each do |image| %>
+			<div><%=link_to( image_tag(image.image.url(:thumb)), image_path(image), class: "img-responsive") %></div>
+			<% end %>
+			<div></div>
+		</div>
+		<script>
+		$(".owl-carousel").owlCarousel({
+	  // Most important owl features
+items : 4,
+itemsCustom : false,
+itemsDesktop : [1199,4],
+itemsDesktopSmall : [980,4],
+itemsTablet: [768,4],
+itemsTabletSmall: false,
+itemsMobile : [479,4],
+singleItem : false,
+itemsScaleUp : false,
+	 // Navigation
+	 navigation : true,
+	 navigationText : ["<",">"],
+	 rewindNav : true,
+	 scrollPerPage : false,
+
+//Pagination
+pagination : false,
+paginationNumbers: false,
+});
+		</script>
