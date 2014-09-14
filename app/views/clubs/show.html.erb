@@ -4,6 +4,7 @@
   <div class="col-sm-3">
         <div class="panel panel-custom">
      <div class="panel-caption"> <%= link_to 'New Check in', root_path, class:"btn btn-primary btn-xs btn-checkin" %></div>
+
            <h2 class="club-name"><%= @club.name %></h2>
       <p class="info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
       <p class="info"><%= fa_icon 'home' %> <%= @club.address %></p>    
@@ -30,12 +31,12 @@
   <div class="col-md-8">
 
     <div class="panel panel-custom">
-     <p class="panel-caption"> <%= fa_icon 'photo' %> Photos
-    <%= link_to 'See All', root_path, class:"btn btn-primary btn-xs pull-right btn-hd-right" %>
-     </p>
+     <div class="panel-caption"> <%= fa_icon 'photo' %> Photos
+    
+     </div>
      <%= render 'slideshow' %>
      <div class="panel-custom-footer">
-    
+    <%= link_to 'View All', root_path, class:"btn btn-default btn-xs btn-va" %>
      </div>
         </div>
             <div class="panel panel-custom">
@@ -76,11 +77,18 @@
 
  </div>
  <div class="col-md-4">
-
       <div class="panel">
+     <div class="panel-caption"><p class="calendar"> <%= fa_icon 'calendar-o' %> Calendar</p>
+   
+     </div>
+     <%= render 'calendar' %>
+
+        </div>
+
+      
     
-  <%= render 'calendar' %>
-</div>
+  
+
 </div>
 <div class="row">
 </div>

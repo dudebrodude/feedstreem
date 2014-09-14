@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   acts_as_follower
 	acts_as_followable
 
+
      TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 

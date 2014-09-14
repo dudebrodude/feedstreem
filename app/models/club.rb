@@ -10,4 +10,5 @@ class Club < ActiveRecord::Base
 	def to_s
 		"#{name} #{address}"
 	end
+	
 end
