@@ -1,0 +1,141 @@
+.gray{
+  background:#2e3338;
+  } 
+  .lt-gray{
+    background: #353a41;
+  }
+  .drk-gray{
+    background: #21262d;
+  }
+
+.well {
+    background-color: #1c1e22;
+    border: 1px solid #0c0d0e;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 5px;
+}
+
+
+    .wrapper
+    {
+        min-height:100%;
+        margin-top:-20px;
+        width:100%;
+        position:relative;
+        background-color:Black;
+        display:inline-block;
+    }
+.sidebar {
+    background-color: #26282c;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20%;
+}
+    .content
+    {
+        min-height:500px;
+        width:80%;
+        position:relative;
+        background-color:#272b30;
+        float:right;
+    }
+    .table-responsive
+{
+    overflow-x: auto;
+}
+.page-well {
+    background-color: #14181b;
+    border: 1px solid #191a1b;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 5px;
+}
+.list-group {
+ 
+    padding-left: 0;
+}
+.list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.panel-header{
+  font:1.5em 'Arial';
+  margin:0;
+}
+.sidebar-margin{
+  margin-left:-15px;
+}
+.info{
+  margin:5px;
+}
+.event-date{
+    
+}
+.event {
+    color: #a8a8a8;
+    font: 1.25em "Arial";
+  
+}
+.event-time {
+    color: #737373;
+    font: 0.85em "Arial";
+    margin-left: 3%;
+    margin-top: -7%;
+}
+.club-panel-header{
+    background: #353a41;
+}
+.panel-caption {
+    background-image: linear-gradient(#484e55, #3a3f44 25%, #313539);
+    border-bottom: 1px solid #414141;
+    color: #c8c8c8;
+    margin: 0;
+    padding: 1% 0 1% 2%;
+}
+.panel-custom{
+    background: #282d32;
+    border-radius: 0;
+}
+.panel-custom-footer{
+    background: #1c2126;
+    color:#c4c4c4;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 10px;
+
+}
+    .footer-text{
+font:.5em 'Arial';
+
+    }
+.btn-hd-right{
+    margin-right: 2%;
+}
+.mt5{
+    margin-top:5px;
+
+}
+.btn-checkin{
+    position: relative;
+    left:60%;
+    margin: 5px;
+}
+
+.club-name {
+    color: #b1b1b1;
+    font: 1.5em "Arial";
+    margin: 2%;
+}
+.gmap-sidebar {
+    border: 2px solid #2b2b2b;
+    margin: -7% 0 1%;
+}
+.follows_club{
+    margin-left:5px;
+}

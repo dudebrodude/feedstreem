@@ -1,13 +1,29 @@
-		<% @club.events.each do |event| %>
-		<div class="col-sm-4">
+<div>
+<table class="table table-hover ">
+	<tbody>
+		<% @upcoming_events.each do |event| %>
+		<tr>
+			<td class="event-date panel-caption"><%= event.start_time.strftime('%A') %></td>
+			<td class="panel-caption"><%= event.start_time.strftime(' %-m/%d') %></td>
+			<td class="panel-caption"></td>
+			<td class="panel-caption"> <%= link_to '+', root_path, class:"btn btn-primary btn-xs btn-add-right" %></td>
+		</tr>
+		<tr>
+			<td class="panel-custom"><%= image_tag event.picture %></td>
+			<td class="panel-custom"><p class="event"><%= event.name %></p>
+				<p class="event-time"><%= event.start_time.strftime('%l:%M%P') %></p>
+			</td>
+			<td class="panel-custom"></td>
+			<td class="panel-custom"></td>
+		</tr>
+				<tr>
+			<td class="panel-custom-footer"></td>
+			<td class="panel-custom-footer"></td>
+			<td class="panel-custom-footer"></td>
+			<td class="panel-custom-footer"></td>
+		</tr>
 
-		<div class="panel">
-			<section>
-				<p class="section-title"><%= event.date.strftime("%a %m/%e ") %></p>
-		<center>
-		<%= link_to event.name, event %>
-		<%= image_tag event.flyer.url(:thumb), class: "img-responsive" %>
-	</center>
-		</div>
-		</div>
 		<% end %>
+	</tbody>
+</table> 
+</div>

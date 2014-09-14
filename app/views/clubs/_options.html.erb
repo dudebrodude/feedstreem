@@ -1,9 +1,16 @@
 
-		<p class="club-options directions"><%= fa_icon 'edit' %> Check In </p>
-		<p class="club-options"><%= fa_icon 'spinner' %> View Live Streem </p>
-		<p><div id="follows_club">
-			<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
-		</div></p>
-		<p class="club-options"><%= fa_icon 'taxi' %> Get Directions</p>
+		<ul class="nav nav-pills nav-stacked">
+  <li><%= fa_icon 'edit' %> Check In</li>
+  <li><%= fa_icon 'spinner' %> View Live Stream </li>
+  <li><div id="follows_club">
+			<%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %></li>
+			<li><%= fa_icon 'taxi' %> Get Directions</li>
+
+</ul>
+
+		<p class="club-options directions"> </p>
+		<p class="club-options"></p>
+		<p></p>
+		<p class="club-options"></p>
 
 		<p class="club-options no-border"><%= fa_icon 'bookmark' %> Reserve Table </p>

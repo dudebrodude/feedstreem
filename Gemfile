@@ -43,6 +43,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'fb_graph'
 gem 'owlcarousel-rails'
+gem 'bootswatch-rails'
 
 
 

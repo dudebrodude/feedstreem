@@ -1,15 +1,24 @@
-<div class="col-md-3">
-	<div class="panel">
+      <div class="wrapper">
+    <div class="sidebar col-md-3">
 		<section>
-			<p class="section-title">My Clubs</p>
-			<table>
-				<thead>
-					<tr>
-						<th>Club</th>
-						<th></th>
-						<th>Wait</th>
-					</tr>
-				</thead>
+			<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>
+			<%= current_user.points %>
+		</section>
+          </div>
+    <div class="content col-md-9">
+    	<div class="col-md-8">
+    	
+    		 <%= bootstrap_flash %>
+		<div class="page-well">
+			<p class="section-title"><%= fa_icon 'clock-o' %> Today</p>
+		</div>
+
+    </div>
+    <div class="col-md-4">
+   <div class="table-responsive">
+    	
+		<table class="table table-striped table-hover">
+
 				<tbody>
 					<% @club.each do |club| %>
 					<tr>
@@ -28,30 +37,9 @@
 					</tr>
 					<% end %>
 				</tbody>
-			</table>
+		</table>
 		</div>
-	</section>
-</div>
-<div class="col-md-6">
-	<div class="panel">
-		<section>
-			<p class="section-title"><%= fa_icon 'clock-o' %> Today</p>
-		</section>
-
-				
-	
-	
-
-
 		
-	</div>
-</div>
-<div class="col-md-3">
-	<div class="panel">
-		<section>
-			<p class="section-title"><%= fa_icon 'bar-chart-o' %> Point Balance</p>
-			<%= current_user.points %>
-		</section>
-	</div>
+ </div>
 </div>
 
