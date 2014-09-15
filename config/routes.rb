@@ -1,5 +1,6 @@
 Feedstreem::Application.routes.draw do
 
+  seems_rateable
   resources :images
 
   get "home/index"

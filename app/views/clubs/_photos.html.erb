@@ -1,18 +1,30 @@
-<a class="footer-text" data-toggle="modal" data-target=".bs-example-modal-lg">View All (<%= @club.images.count %>)</a>
+    <div class="panel panel-custom">
+     <div class="panel-caption"> <%= fa_icon 'photo' %> Photos
+    
+     </div>
+     <%= render 'slideshow' %>
+     <div class="panel-custom-footer">
+      <button class="btn btn-default btn-xs btn-va" data-toggle="modal" data-target=".bs-example-modal-lg">View All</button>
+
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-     <h1><%= @club.name %> Images</h1>
-<table>
-  <tbody>
-  <% @club.images.each do |image| %>
-      <tr>
-        <td><%=link_to( image_tag(image.image.url(:small)), image_path(image), limit:4, class: "img-responsive") %></td>
-       </tr>
-    <% end %>
-  </tbody>
-</table>
+             <div class="table-responsive">
+      
+    <table class="table">
+
+        <tbody>
+          <% @club.images.each do |image| %>
+          
+            <td><%=link_to( image_tag(image.image.url(:thumb)), image_path(image), class: "img-responsive") %> </td>
+          
+          <% end %>
+        </tbody>
+    </table>
+    </div>
     </div>
   </div>
 </div>
-
+    
+         </div>
+        </div>

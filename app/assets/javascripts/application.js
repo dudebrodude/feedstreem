@@ -18,4 +18,7 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
-//= require_tree .
+//= require_tree
+//= require seems_rateable
+//= require_directory ./rateable
+ .

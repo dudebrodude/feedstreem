@@ -12,8 +12,6 @@ class Club < ActiveRecord::Base
 		"#{name} #{address}"
 	end
 
-	def average_rating
-  ratings.sum(:score) / ratings.count
-end
+  seems_rateable 
 	
 end

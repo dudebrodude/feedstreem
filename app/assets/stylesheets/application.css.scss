@@ -1,3 +1,6 @@
+/*
+ //= require seems_rateable
+*/
 @import "bootswatch/slate/variables";
 @import "bootstrap";
 @import "bootswatch/slate/bootswatch";
@@ -5,6 +8,9 @@
 @import "owl.carousel";
 @import "owl.theme";
 @import "custom";
+@import "bootstrap-image-gallery";
+
+
 
 body,html{
   height:100%;

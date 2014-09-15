@@ -3,13 +3,23 @@
 <div class="row">
   <div class="col-sm-3">
         <div class="panel panel-custom">
-     <div class="panel-caption"> <%= link_to 'New Check in', new_checkin_path, class:"btn btn-primary btn-xs btn-checkin" %></div>
-
-
-
-           <h2 class="club-name"><%= @club.name %></h2>
+     <div class="panel-caption"> <%= @club.wait %> <%= link_to 'New Check in', new_checkin_path, class:"btn btn-primary btn-xs btn-checkin" %></div>
+     <div class="row">
+      <div class="col-sm-6">
+        <h2 class="club-name"><%= @club.name %></h2>
+        </div>
+        <div class="col-sm-6">
+Wait time
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
       <p class="info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
-      <p class="info"><%= fa_icon 'home' %> <%= @club.address %></p>    
+      </div>
+       <div class="col-sm-12">
+      <p class="info"><%= fa_icon 'home' %> <%= @club.address %></p>
+    </div>
+      </div>    
      <div class="panel-custom-footer">
    
     <div id="follows_club">
@@ -32,29 +42,12 @@
  <div class="row">
   <div class="col-md-8">
 
-    <div class="panel panel-custom">
-     <div class="panel-caption"> <%= fa_icon 'photo' %> Photos
-    
-     </div>
-     <%= render 'slideshow' %>
-     <div class="panel-custom-footer">
-      <button class="btn btn-default btn-xs btn-va" data-toggle="modal" data-target=".bs-example-modal-lg">View All</button>
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
-    
-         </div>
-        </div>
             <div class="panel panel-custom">
 
    <ul class="nav nav-tabs">
-  <li class="active"><a href="#home" data-toggle="tab"><%= fa_icon 'clock-o' %> Recent Activity</a></li>
-  <li class=""><a href="#profile" data-toggle="tab"><%= fa_icon 'group' %> Friend Activity</a></li>
+  <li class="active"><a href="#home" data-toggle="tab"><%= fa_icon 'clock-o' %> Recent</a></li>
+  <li class=""><a href="#photos" data-toggle="tab"><%= fa_icon 'photo' %> Photos (<%= @club.images.count %>) </li>
   
   <li class="dropdown pull-right">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -71,8 +64,41 @@
   <div class="tab-pane fade active in" id="home">
     <p>Recent Posts here</p>
   </div>
-  <div class="tab-pane fade" id="profile">
-    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+  <div class="tab-pane fade" id="photos">
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
   </div>
   <div class="tab-pane fade" id="dropdown1">
     <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
