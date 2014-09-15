@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831121300) do
+ActiveRecord::Schema.define(version: 20140914034346) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -134,6 +134,17 @@ ActiveRecord::Schema.define(version: 20140831121300) do
     t.integer "sash_id"
     t.string  "category", default: "default"
   end
+
+  create_table "ratings", force: true do |t|
+    t.integer  "club_id"
+    t.integer  "user_id"
+    t.integer  "score",      default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["club_id"], name: "index_ratings_on_club_id"
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
   create_table "sashes", force: true do |t|
     t.datetime "created_at"

@@ -5,10 +5,15 @@ class Club < ActiveRecord::Base
 	has_many :checkins
 	has_many :events
 	has_many :images
+	has_many :ratings
 	geocoded_by :address
 	after_validation :geocode
 	def to_s
 		"#{name} #{address}"
 	end
+
+	def average_rating
+  ratings.sum(:score) / ratings.count
+end
 	
 end

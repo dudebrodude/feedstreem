@@ -3,7 +3,9 @@
 <div class="row">
   <div class="col-sm-3">
         <div class="panel panel-custom">
-     <div class="panel-caption"> <%= link_to 'New Check in', root_path, class:"btn btn-primary btn-xs btn-checkin" %></div>
+     <div class="panel-caption"> <%= link_to 'New Check in', new_checkin_path, class:"btn btn-primary btn-xs btn-checkin" %></div>
+
+
 
            <h2 class="club-name"><%= @club.name %></h2>
       <p class="info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
@@ -36,8 +38,17 @@
      </div>
      <%= render 'slideshow' %>
      <div class="panel-custom-footer">
-    <%= link_to 'View All', root_path, class:"btn btn-default btn-xs btn-va" %>
-     </div>
+      <button class="btn btn-default btn-xs btn-va" data-toggle="modal" data-target=".bs-example-modal-lg">View All</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+    
+         </div>
         </div>
             <div class="panel panel-custom">
 

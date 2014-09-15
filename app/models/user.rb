@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_merit
   has_many :checkins
   has_many :images
+    has_many :ratings
   acts_as_follower
 	acts_as_followable
 
