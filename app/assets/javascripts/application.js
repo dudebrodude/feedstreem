@@ -21,4 +21,7 @@
 //= require_tree
 //= require seems_rateable
 //= require_directory ./rateable
+//= require blueimp-gallery-all
+//= require bootstrap-gallery
+//= require twitter/typeahead
  .

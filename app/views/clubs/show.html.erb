@@ -3,34 +3,43 @@
 <div class="row">
   <div class="col-sm-3">
         <div class="panel panel-custom">
-     <div class="panel-caption"> <%= @club.wait %> <%= link_to 'New Check in', new_checkin_path, class:"btn btn-primary btn-xs btn-checkin" %></div>
+     <div class="panel-caption">                 <div id="follows_club">
+        <%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
+      </div></div>
      <div class="row">
       <div class="col-sm-6">
-        <h2 class="club-name"><%= @club.name %></h2>
+        
+        <%= image_tag @club.avatar.url(:thumb), class: "img-thumbnail club-avatar" %>
+
+       
+      
+        
         </div>
         <div class="col-sm-6">
-Wait time
+          
+           <h2 class="club-name"><%= @club.name %></h2>
+           <%= link_to 'Check in', new_checkin_path, class:"btn btn-default btn-sm club-info" %>
+
+        
+           
         </div>
+
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-      <p class="info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
-      </div>
+    
+     <div class="panel-custom-footer">
+           <div class="row">
        <div class="col-sm-12">
+           <p class="info"><%= fa_icon 'phone' %> <%= number_to_phone(@club.phone, area_code: true) %></p>
       <p class="info"><%= fa_icon 'home' %> <%= @club.address %></p>
     </div>
-      </div>    
-     <div class="panel-custom-footer">
-   
-    <div id="follows_club">
-        <%= render :partial => "follows_clubs/follow_club", :locals => {:club => @club} %>
       </div>
+
      </div>
         </div>
         <div class="gmap-sidebar">
-
-  <%= render 'gmap' %>
+             <%= render 'gmap' %>
   </div>
+
   <div class="list-group">
     <a class = "list-group-item"><%= fa_icon 'edit' %> Check In</a>
     <a class = "list-group-item"><%= fa_icon 'spinner' %> View Live Stream </a>
@@ -42,63 +51,34 @@ Wait time
  <div class="row">
   <div class="col-md-8">
 
+    <div class="panel panel-custom">
+<p class="panel-caption"><%= fa_icon 'photo' %> Photos</p>
+
+<div class="panel-custom-footer">
+<%= link_to 'View All', root_path, class: "btn btn-default btn-xs btn-va" %>
+</div>
+</div>
+
+
 
             <div class="panel panel-custom">
 
    <ul class="nav nav-tabs">
-  <li class="active"><a href="#home" data-toggle="tab"><%= fa_icon 'clock-o' %> Recent</a></li>
+  <li class="active"><a href="#recent" data-toggle="tab"><%= fa_icon 'clock-o' %> Recent</a></li>
   <li class=""><a href="#photos" data-toggle="tab"><%= fa_icon 'photo' %> Photos (<%= @club.images.count %>) </li>
-  
-  <li class="dropdown pull-right">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      Dropdown <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
-      <li class="divider"></li>
-      <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
-    </ul>
-  </li>
 </ul>
 <div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade active in" id="home">
+  <div class="tab-pane fade active in" id="recent">
     <p>Recent Posts here</p>
   </div>
   <div class="tab-pane fade" id="photos">
-<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-    <div class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body next"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left prev">
-                        <i class="glyphicon glyphicon-chevron-left"></i>
-                        Previous
-                    </button>
-                    <button type="button" class="btn btn-primary next">
-                        Next
-                        <i class="glyphicon glyphicon-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="col-sm-12">
+<div class="photo-well">
+<%= render 'gallery' %>
 </div>
+    </div>
+
+
   </div>
   <div class="tab-pane fade" id="dropdown1">
     <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
@@ -107,9 +87,9 @@ Wait time
     <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
   </div>
 </div>
-     <div class="panel-custom-footer">
-    
-     </div>
+<!-- Nav tabs -->
+
+ 
         </div>
 
  </div>
