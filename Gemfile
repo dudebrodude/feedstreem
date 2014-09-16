@@ -44,11 +44,9 @@ gem 'gmaps4rails'
 gem 'fb_graph'
 gem 'owlcarousel-rails'
 gem 'bootswatch-rails'
-gem 'letsrate'
-gem 'seems_rateable'
 gem 'blueimp-gallery'
-gem 'jquery-fileupload-rails'
 gem 'twitter-typeahead-rails'
+
 
 
 

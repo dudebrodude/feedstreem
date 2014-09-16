@@ -12,16 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
-//= require jquery.raty.min.js
+//= require jquery.raty
 //= require bootstrap
 //= require owl.carousel
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
 //= require_tree
-//= require seems_rateable
 //= require_directory ./rateable
 //= require blueimp-gallery-all
 //= require bootstrap-gallery

@@ -1,6 +1,6 @@
 Feedstreem::Application.routes.draw do
 
-  seems_rateable
+  resources :ratings, only: :update
   resources :images
   resources :uploads
 
@@ -19,7 +19,7 @@ end
 resources :follows, :controller => 'follows_users', :only => [:create, :destroy]
 
 end
-resources :ratings, only: :update
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

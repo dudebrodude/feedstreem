@@ -11,6 +11,8 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+@rating = Rating.where(club_id: @club.id, user_id: current_user.id).first 
+
 
     
     @hash = Gmaps4rails.build_markers(@club) do |club, marker|

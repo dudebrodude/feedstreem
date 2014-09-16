@@ -1,6 +1,3 @@
-/*
- //= require seems_rateable
-*/
 @import "bootswatch/slate/variables";
 @import "bootstrap";
 @import "bootswatch/slate/bootswatch";
@@ -10,6 +7,7 @@
 @import "custom";
 @import "blueimp-gallery-all";
 @import "bootstrap-gallery";
+@import "jquery.raty";
 
 
 body,html{
