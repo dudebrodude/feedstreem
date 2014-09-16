@@ -1,43 +1,29 @@
-<div>
-	<div class="row">
 <div class="row">
-<div class="col-sm-12">
-Date
-</div>
-</div>
-<div class="row">
-	<div class="col-sm-4">
-image
-	</div>
-	<div class="col-sm-8">
-event
-	</div>
-
-</div>
-
-	</div>
-<table class="table table-hover ">
-	<tbody>
+	<div class="col-sm-12">
 		<% @upcoming_events.each do |event| %>
-
-		<tr>
-			<td class="event-date"> <p class="event"> <%= event.start_time.strftime(' %-m/%d') %></p></td>
-			<td class="event-date"><%= event.start_time.strftime('%A') %></td>
-			<td class="event-date"></td>
-			<td class="event-date"> <%= link_to '+', root_path, class:"btn btn-primary btn-xs btn-add-right" %></td>
-		</tr>
-		<tr>
-			<td class="panel-custom"><%= image_tag event.picture %></td>
-			<td class="panel-custom"><p class="event"><%= event.name %></p>
-				<p class="event-time"><%= event.start_time.strftime('%l:%M%P') %></p>
-			</td>
-			<td class="panel-custom"></td>
-			<td class="panel-custom"></td>
-		</tr>
-
-
-
+		<div class="panel panel-custom calendar">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel-caption"> 
+						<%= content_tag :span, event.start_time.strftime('%-d'), class: "calendar-date" %>   
+						<%= content_tag :span, nil, class: "calendar-divider" %>
+						<%= content_tag :span, event.start_time.strftime('%B'), class: "calendar-month" %> 
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<%= image_tag event.picture, class: "event-img" %>
+				</div>
+				<div class="col-sm-8">
+					<%= content_tag :p, event.name, class: "event-name" %>
+					<%= content_tag :span, event.start_time.strftime('%A'), class: "event-time" %> 
+					<%= content_tag :span, event.start_time.strftime('%l:%M%P'), class: "event-time" %>
+				</div>
+			</div>
+			<div class="panel-custom-footer">
+			</div>
+		</div>
 		<% end %>
-	</tbody>
-</table> 
+	</div>
 </div>
