@@ -11,22 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-     <%= f.text_field :name %>
-  </div>
-    <div class="field">
-        <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-        <%= f.text_field :address %>
-  </div>
-    <div class="field">
-        <%= f.number_field :wait %>
-  </div>
-    <div class="form-group">
-    <%= f.file_field :avatar %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<%= bootstrap_form_for @club, remote: true do |f|   %>
+ <%= f.text_field :name %>
+   <%= f.text_field :phone %>
+   <%= f.text_field :address %>
+   <%= f.number_field :wait %>
+     <%= f.file_field :avatar %>
+ <%= f.submit %>
+<% end %>
+
 <% end %>

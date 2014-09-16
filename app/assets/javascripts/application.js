@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require jquery.raty.min.js
 //= require bootstrap
 //= require owl.carousel

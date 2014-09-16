@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915025437560308) do
+ActiveRecord::Schema.define(version: 20140916010605) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -151,19 +151,14 @@ ActiveRecord::Schema.define(version: 20140915025437560308) do
     t.datetime "updated_at"
   end
 
-  create_table "seems_rateable_rates", force: true do |t|
-    t.integer  "rater_id"
-    t.integer  "rateable_id"
-    t.string   "rateable_type"
-    t.float    "stars",         null: false
-    t.string   "dimension"
+  create_table "uploads", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uploaded_file_file_name"
+    t.string   "uploaded_file_content_type"
+    t.integer  "uploaded_file_file_size"
+    t.datetime "uploaded_file_updated_at"
   end
-
-  add_index "seems_rateable_rates", ["dimension"], name: "index_seems_rateable_rates_on_dimension"
-  add_index "seems_rateable_rates", ["rateable_id", "rateable_type"], name: "index_seems_rateable_rates_on_rateable_id_and_rateable_type"
-  add_index "seems_rateable_rates", ["rater_id"], name: "index_seems_rateable_rates_on_rater_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

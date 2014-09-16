@@ -2,6 +2,7 @@ Feedstreem::Application.routes.draw do
 
   seems_rateable
   resources :images
+  resources :uploads
 
   get "home/index"
   resources :checkins
