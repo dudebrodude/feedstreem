@@ -1,24 +1,20 @@
-<%= bootstrap_form_for(@club) do |f| %>
-  <% if @club.errors.any? %>
-    <div id="error_explanation">
+<%= bootstrap_form_for @club, :html => {:multipart => true} do |f|   %>
+ <% if @club.errors.any? %>
+   <div id="error_explanation">
       <h2><%= pluralize(@club.errors.count, "error") %> prohibited this club from being saved:</h2>
-
-      <ul>
-      <% @club.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-<%= bootstrap_form_for @club, remote: true do |f|   %>
- <%= f.text_field :name %>
-   <%= f.text_field :phone %>
-   <%= f.text_field :address %>
-   <%= f.number_field :wait %>
-     <%= f.file_field :avatar %>
- <%= f.submit %>
+     <ul>
+       <% @club.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+  <%= f.text_field :name %>
+  <%= f.text_field :phone %>
+  <%= f.text_field :address %>
+  <%= f.number_field :wait %>
+  <%= f.file_field :avatar %>
+  <%= f.submit %>
 <% end %>
 
-<% end %>
+

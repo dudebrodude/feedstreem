@@ -1,4 +1,6 @@
-<h1>Editing club</h1>
+<span> <%= image_tag @club.avatar.url(:thumb) %></span>
+
+<span class="club-name">Edit <%= @club.name %></h1></span>
 
 <%= render 'form' %>
 

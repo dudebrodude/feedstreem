@@ -6,6 +6,7 @@ class Club < ActiveRecord::Base
 	has_many :events
 	has_many :images
 	has_many :ratings
+	has_many :reviews
 	geocoded_by :address
 	after_validation :geocode
 	def to_s

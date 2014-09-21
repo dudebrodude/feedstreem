@@ -1,29 +1,23 @@
 <div class="club-rating">
-<div id="star"></div>
-(<%= @club.ratings.count %> 
-<% if @club.ratings.count <= 1 %>
-Review)
-<% else %>
-Reviews)
-<% end %>
-<script>
-$('#star').raty({
-  readOnly: true,
-  space: false,
-  score: <%= @club.average_rating %>,
-  path: '/assets'
-});
-
-$('#user_star').raty({
-  score: <%= @rating.score %>,
-  path: '/assets',
-  click: function(score, evt) {
-    $.ajax({
-      url: '/ratings/' + <%= @rating.id %>,
-      type: 'PATCH',
-      data: { score: score }
-    });
-  }
-});
-</script>
+  <div id="star"></div>
+  <%= pluralize( @club.ratings.count, 'Review' ) %>
+  <% if @club.ratings.count == 0 %>
+  <script>
+  $('#star').raty({
+    readOnly: true,
+    space: false,
+    score: 0,
+    path: '/assets'
+  });
+  </script>
+  <% else %>
+  <script>
+  $('#star').raty({
+    readOnly: true,
+    space: false,
+    score: <%= @club.average_rating %>,
+    path: '/assets'
+  });
+  </script>
+  <% end %>
 </div>

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :checkins
   has_many :images
    has_many :ratings
+   has_many :reviews
  
   acts_as_follower
 	acts_as_followable

@@ -146,6 +146,19 @@ ActiveRecord::Schema.define(version: 20140915025437560308) do
   add_index "ratings", ["club_id"], name: "index_ratings_on_club_id"
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
+  create_table "reviews", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "club_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "rating_id"
+  end
+
+  add_index "reviews", ["club_id"], name: "index_reviews_on_club_id"
+  add_index "reviews", ["rating_id"], name: "index_reviews_on_rating_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
   create_table "sashes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"

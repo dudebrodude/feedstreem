@@ -1,24 +1,46 @@
- <table class="table table-striped table-hover ">
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Club</th>
+      <th>Rating</th>
+      <th>Address</th>
     </tr>
   </thead>
   <tbody>
     <% @clubs.each do |club| %>
-      <tr>
-        <td><%= image_tag club.avatar.url(:tiny) %> </td>
-        <td class="club-list-name"><%= link_to club.name, club_path(club) %></td>
-        <td class="club-info"><%= club.address %></td>
-        <% if club.ratings.count >= 1 %>
-        <td><%= club.average_rating %></td>
-        <% else %>
-        <td></td>
-        <% end %>
+    <tr>
+      <td><%= image_tag club.avatar.url(:tiny) %> </td>
+      <td class="club-list-name">
+        <%= link_to club.name, club_path(club) %> </td>
+        <td>
+          <div id="star"></div>
+
+          <% if club.ratings.count == 0 %>
+          <script>
+          $('#star').raty({
+            readOnly: true,
+            space: false,
+            score: 0,
+            path: '/assets'
+          });
+          </script>
+          <% else %>
+          <script>
+          $('#star').raty({
+            readOnly: true,
+            space: false,
+            score: <%= club.average_rating %>,
+            path: '/assets'
+          });
+          </script>
+          <% end %>
+        </div>
+      </td>
+      <td class="club-info"><%= club.address %></td>
+      <div class="club-rating">
+
       </tr>
-    <% end %>
-  </tbody>
+      <% end %>
+    </tbody>
 </table> 

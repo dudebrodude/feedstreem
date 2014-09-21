@@ -1,6 +1,6 @@
 class ClubsController < ApplicationController
   before_action :set_club, only: [:show, :edit, :update, :destroy]
-   respond_to :html, :js
+  respond_to :html, :js
 
   # GET /clubs
   # GET /clubs.json
@@ -11,51 +11,31 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
-@rating = Rating.where(club_id: @club.id, user_id: current_user.id).first 
-
-
-    
+    @rating = Rating.where(club_id: @club.id, user_id: current_user.id).first 
     @hash = Gmaps4rails.build_markers(@club) do |club, marker|
       marker.lat club.latitude
       marker.lng club.longitude
-end
+    end
         #Load facebook.yml info
-        config = YAML::load(File.open("#{Rails.root}/config/facebook.yml"));
-
+      config = YAML::load(File.open("#{Rails.root}/config/facebook.yml"));
        #Instantiate a new application with our app_id so we can get an access token
        my_app = FbGraph::Application.new(config['production']['app_id']);
        acc_tok = my_app.get_access_token(config['production']['client_secret']);
-
        #Instantiate a new page class using the page_id specified 
        @page = FbGraph::Page.new(config['production']['page_id'], :access_token => acc_tok).fetch;
-
-               #Get wall posts
+         #Get wall posts
        @wall = FbGraph::Page.new(config['production']['page_id'], :access_token => acc_tok).posts;
-
-
-
-
-
-
        #Grab the events from the page 
        events = @page.events.sort_by{|e| e.start_time};
-
        #Grab the picture from the page 
        picture = @page.picture;
-
-      
-
-     
-       #Get the events that are upcoming
-       @upcoming_events = events.find_all{|e| e.start_time >= Time.now};
-
+         #Get the events that are upcoming
+         @upcoming_events = events.find_all{|e| e.start_time >= Time.now};
         #Get the picture
-       @fbpic = picture;
-
+        @fbpic = picture;
        #Get the events that have passed
        @past_events = events.find_all{|e| e.start_time < Time.now}.reverse;
-  end
-
+     end
   # GET /clubs/new
   def new
     @club = Club.new
@@ -116,4 +96,4 @@ end
     def club_params
       params.require(:club).permit(:name, :phone, :address, :wait, :avatar)
     end
-end
+  end

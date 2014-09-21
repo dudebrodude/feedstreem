@@ -1,5 +1,7 @@
 Feedstreem::Application.routes.draw do
 
+  resources :reviews
+
   resources :ratings, only: :update
   resources :images
   resources :uploads
