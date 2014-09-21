@@ -13,7 +13,11 @@
         <td><%= image_tag club.avatar.url(:tiny) %> </td>
         <td class="club-list-name"><%= link_to club.name, club_path(club) %></td>
         <td class="club-info"><%= club.address %></td>
+        <% if club.ratings.count >= 1 %>
+        <td><%= club.average_rating %></td>
+        <% else %>
         <td></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

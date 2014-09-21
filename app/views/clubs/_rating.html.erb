@@ -1,0 +1,29 @@
+<div class="club-rating">
+<div id="star"></div>
+(<%= @club.ratings.count %> 
+<% if @club.ratings.count <= 1 %>
+Review)
+<% else %>
+Reviews)
+<% end %>
+<script>
+$('#star').raty({
+  readOnly: true,
+  space: false,
+  score: <%= @club.average_rating %>,
+  path: '/assets'
+});
+
+$('#user_star').raty({
+  score: <%= @rating.score %>,
+  path: '/assets',
+  click: function(score, evt) {
+    $.ajax({
+      url: '/ratings/' + <%= @rating.id %>,
+      type: 'PATCH',
+      data: { score: score }
+    });
+  }
+});
+</script>
+</div>

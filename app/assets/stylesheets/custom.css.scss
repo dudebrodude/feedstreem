@@ -7,6 +7,11 @@
   .drk-gray{
     background: #21262d;
   }
+.container-panel {
+    background: #2e3338;
+    height: 100%;
+    margin-top: -20px;
+}
 
 .well {
     background-color: #1c1e22;
@@ -138,17 +143,29 @@ font:.5em 'Arial';
 .event-time{
   color:#adadad;
 }
-.club-avatar{
-  margin:3%;
+.club-header {
+    background: #282d32;
+    border-bottom: 1px solid #414141;
+    border-radius: 0;
+    margin-top: 3px;
+    padding: 10px;
+}
+.club-avatar {
+    margin: 5% 5% 5% 0;
 }
 
 .club-name {
     color: #b1b1b1;
     font: 1.5em "Arial";
-    margin: 5px 5px 5px -15px;
+    margin: 5px;
 }
 .club-info{
   margin: 0 5px 5px -15px;
+}
+.club-rating{
+
+    margin: 5px;
+
 }
 .gmap-sidebar {
     border: 2px solid #2b2b2b;
@@ -241,3 +258,24 @@ font:.5em 'Arial';
 .btn-twitter.active {
   background-color: #01538d \9;
 }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #282d32;
+    border-color: #1c1e22 #1c1e22 transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #bfbfbf;
+    cursor: default;
+}
+
+
+    #owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    }
+
